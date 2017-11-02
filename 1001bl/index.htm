@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="GB2312">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://gz.house.qq.com/house/0406bl/zzq_base.css">
+    <link href="http://gz.game.leju.com/201604/tyhjhy/css/swiper3.06.min.css" rel="stylesheet">
+    <title>成长是一场无穷大的赛跑</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+        }
+        
+        @-webkit-keyframes rotation {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        .actM {
+            -webkit-transform: rotate(360deg);
+            animation: rotation 3s linear infinite;
+            -moz-animation: rotation 3s linear infinite;
+            -webkit-animation: rotation 3s linear infinite;
+            -o-animation: rotation 3s linear infinite;
+            /*animation: go 1.5s linear infinite;*/
+        }
+        
+        @-webkit-keyframes go {
+            0% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        
+        .music {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: 38px;
+            z-index: 10000;
+            border-radius: 50%;
+            background-color: green;
+            z-index: 100000001
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 100000000;
+        }
+        
+        .swiper-slide {
+            overflow: hidden;
+            transform: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .slide1_img1 {
+            width: 42%;
+            position: absolute;
+            left: 8%;
+            top: 4%;
+            z-index: 2;
+            transform: translate3d(-130%, 0, 0)
+        }
+        
+        .slide1_img2 {
+            width: 95%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            opacity: 0;
+            transform: scale(3);
+        }
+        
+        .slide1_img3 {
+            width: 60%;
+            position: absolute;
+            left: 6%;
+            bottom: 16%;
+            text-align: left;
+        }
+        
+        .slide1_img3>img {
+            width: 100%;
+            display: inline-block;
+            transform: translateX(-112%);
+        }
+        
+        .slide1_img3>div {
+            margin-top: 4%;
+        }
+        
+        .slide1_img3 .comp {
+            transform: translateX(-112%)
+        }
+        
+        .slide1_img3>div p {
+            color: #0c1867;
+            font-size: 15px;
+        }
+        
+        .slide1_img3>div.p1 p {
+            font-weight: bold;
+        }
+        
+        .slide1_img3>div.p3 img {
+            margin-top: 10%;
+            width: 60%;
+            display: inline-block;
+            transform: translateY(170%);
+        }
+        
+        .slide1_img3>div.p3 p {
+            transform: translateX(-112%)
+        }
+        
+        .slide1_img4 {
+            position: absolute;
+            right: 0;
+            bottom: 1%;
+            width: 27%;
+            transform: translateX(100%)
+        }
+        
+        .ani1 .img2 {
+            animation: img2 0.4s forwards ease-in;
+        }
+        
+        @-webkit-keyframes img2 {
+            0% {
+                opacity: 0;
+                transform: scale(3);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .ani1 .img1 {
+            animation: img1 0.6s 0.5s forwards linear;
+        }
+        
+        @-webkit-keyframes img1 {
+            0% {
+                transform: translate3d(-130%, 0, 0)
+            }
+            100% {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+        
+        .ani2 .img1 {
+            animation: img1 0.6s 0.5s forwards linear;
+        }
+        
+        @-webkit-keyframes img1 {
+            0% {
+                transform: translate3d(-130%, 0, 0)
+            }
+            100% {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+        
+        .ani3 .img1 {
+            animation: img1 0.6s 0.5s forwards linear;
+        }
+        
+        @-webkit-keyframes img1 {
+            0% {
+                transform: translate3d(-130%, 0, 0)
+            }
+            100% {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+        
+        .ani4 .img1 {
+            animation: img1 0.6s 0.5s forwards linear;
+        }
+        
+        @-webkit-keyframes img1 {
+            0% {
+                transform: translate3d(-130%, 0, 0)
+            }
+            100% {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+        
+        .ani1 .img3 .a1 {
+            animation: a1 0.6s 1.8s forwards linear;
+        }
+        
+        @-webkit-keyframes a1 {
+            0% {
+                transform: translateX(-112%);
+            }
+            50% {
+                transform: translateX(20%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        /*.ani1 .img3 .a2 {animation: a2 0.6s 1.7s forwards linear;}
+
+        @-webkit-keyframes a2 {
+            0% {transform: translateX(-120%)}
+            100% {transform: translateX(0)}
+        }
+
+        .ani1 .img3 .a3 {animation: a3 0.6s 2s forwards linear;}
+
+        @-webkit-keyframes a3 {
+            0% {transform: translateX(-120%)}
+            100% {transform: translateX(0)}
+        }
+
+        .ani1 .img3 .a4 {animation: a4 0.6s 2.6s forwards linear;}
+
+        @-webkit-keyframes a4 {
+            0% {transform: translateX(-120%)}
+            100% {transform: translateX(0)}
+        }*/
+        
+        .ani1 .img3 .a5 {
+            animation: a5 0.6s 2.5s forwards linear;
+        }
+        
+        @-webkit-keyframes a5 {
+            0% {
+                transform: translateY(170%)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+        
+        .ani1 .img4 {
+            animation: img4 0.6s 1.8s forwards ease-in;
+        }
+        
+        @-webkit-keyframes img4 {
+            0% {
+                transform: translateX(100%);
+            }
+            50% {
+                transform: translateX(-20%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        
+        .slide2_img2 {
+            position: absolute;
+            top: 12%;
+            left: 10%;
+            width: 80%;
+            opacity: 0;
+            transform: translateY(-100%;
+            )
+        }
+        
+        .slide2_img3 {
+            width: 40%;
+            position: absolute;
+            right: 8%;
+            top: 26%;
+            transform: translateX(120%)
+        }
+        
+        .slide2_img4 {
+            position: absolute;
+            width: 40%;
+            left: 10%;
+            top: 30%;
+            transform: scale(0)
+        }
+        
+        .slide2_img5 {
+            position: absolute;
+            right: 8%;
+            width: 46%;
+            top: 56%;
+            transform: scale(0);
+        }
+        
+        .slide2_img6 {
+            position: absolute;
+            bottom: 4%;
+            left: 8%;
+            width: 30%;
+            transform: translateY(140%);
+        }
+        
+        .slide2_img7 {
+            position: absolute;
+            right: 4%;
+            bottom: 4%;
+            width: 6%;
+        }
+        
+        .ani2 .img2 {
+            animation: aimg2 0.6s 1s forwards linear;
+        }
+        
+        @-webkit-keyframes aimg2 {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+        
+        .ani2 .img4 {
+            animation: aimg4 0.6s 2.4s forwards linear;
+        }
+        
+        @-webkit-keyframes aimg4 {
+            0% {
+                transform: scale(0)
+            }
+            30% {
+                transform: scale(1)
+            }
+            60% {
+                transform: scale(0.7)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+        
+        .ani2 .img5 {
+            animation: aimg5 0.6s 3.7s forwards linear;
+        }
+        
+        @-webkit-keyframes aimg5 {
+            0% {
+                transform: scale(0)
+            }
+            30% {
+                transform: scale(1)
+            }
+            60% {
+                transform: scale(0.7)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+        
+        .ani2 .img3 {
+            animation: aimg3 0.6s 1.7s forwards ease-in;
+        }
+        
+        @-webkit-keyframes aimg3 {
+            0% {
+                transform: translateX(120%)
+            }
+            100% {
+                transform: translateX(0)
+            }
+        }
+        
+        .ani2 .img6 {
+            animation: aimg6 0.6s 4s forwards ease-in;
+        }
+        
+        @-webkit-keyframes aimg6 {
+            0% {
+                transform: translateY(140%)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+        
+        .slide3_img2 {
+            width: 40%;
+            position: absolute;
+            left: 50%;
+            margin-left: -20%;
+            top: 10%;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(-140%);
+        }
+        
+        .slide3_img3 {
+            width: 46%;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            margin-left: -23%;
+        }
+        
+        .slide3_img4 {
+            width: 40%;
+            position: absolute;
+            right: 8%;
+            top: 18%;
+            opacity: 0
+        }
+        
+        .slide3_img5 {
+            width: 44%;
+            position: absolute;
+            left: 4%;
+            top: 23%;
+            opacity: 0
+        }
+        
+        .slide3_img6 {
+            width: 28%;
+            position: absolute;
+            right: 8%;
+            top: 32%;
+            opacity: 0
+        }
+        
+        .slide3_img7 {
+            width: 34%;
+            position: absolute;
+            left: 4%;
+            top: 44%;
+            opacity: 0
+        }
+        
+        .slide3_img8 {
+            width: 54%;
+            position: absolute;
+            left: 26%;
+            top: 58%;
+            opacity: 0
+        }
+        
+        .slide3_img9 {
+            position: absolute;
+            width: 70%;
+            left: 50%;
+            margin-left: -35%;
+            bottom: 8%;
+            transform: translateY(180%)
+        }
+        
+        .ani3 .img2 {
+            animation: bimg2 0.6s 1s forwards linear;
+        }
+        
+        @-webkit-keyframes bimg2 {
+            0% {
+                opacity: 0;
+                transform: translateY(-140%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+        /*.ani3 .img3 {animation: bimg3 0.6s 1.8s forwards ease-out;}
+
+        @-webkit-keyframes bimg3 {
+            0% {opacity: 0;transform: scale(4)}
+            100% {opacity: 1;transform: scale(1)}
+        }*/
+        
+        .ani3 .img4 {
+            animation: bimg4 0.6s 1.6s forwards linear;
+        }
+        
+        @-webkit-keyframes bimg4 {
+            0% {
+                opacity: 0
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        
+        .ani3 .img5 {
+            animation: bimg5 0.6s 2.2s forwards linear;
+        }
+        
+        @-webkit-keyframes bimg5 {
+            0% {
+                opacity: 0
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        
+        .ani3 .img6 {
+            animation: bimg6 0.6s 2.8s forwards linear;
+        }
+        
+        @-webkit-keyframes bimg6 {
+            0% {
+                opacity: 0
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        
+        .ani3 .img7 {
+            animation: bimg7 0.6s 3.4s forwards linear;
+        }
+        
+        @-webkit-keyframes bimg7 {
+            0% {
+                opacity: 0
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        
+        .ani3 .img8 {
+            animation: bimg8 0.6s 3.9s forwards ease-in;
+        }
+        
+        @-webkit-keyframes bimg8 {
+            0% {
+                opacity: 0
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        
+        .ani3 .img9 {
+            animation: bimg9 0.6s 4.5s forwards linear;
+        }
+        
+        @-webkit-keyframes bimg9 {
+            0% {
+                transform: translateY(180%)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+        
+        .ani3 .img4c {
+            animation: img4c 1s infinite linear;
+        }
+        
+        @-webkit-keyframes img4c {
+            0% {
+                transform: translateX(0);
+                opacity: 1
+            }
+            25% {
+                transform: translateX(-5%);
+                opacity: 1
+            }
+            50% {
+                transform: translateX(0);
+                opacity: 1
+            }
+            75% {
+                transform: translateX(5%);
+                opacity: 1
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1
+            }
+        }
+        
+        .ani3 .img5c {
+            animation: img5c 1s infinite linear;
+        }
+        
+        @-webkit-keyframes img5c {
+            0% {
+                transform: translateY(0);
+                opacity: 1
+            }
+            25% {
+                transform: translateY(-5%);
+                opacity: 1
+            }
+            50% {
+                transform: translateY(0);
+                opacity: 1
+            }
+            75% {
+                transform: translateY(5%);
+                opacity: 1
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+        
+        .ani3 .img6c {
+            animation: img6c 1s infinite linear;
+        }
+        
+        @-webkit-keyframes img6c {
+            0% {
+                transform: translateY(0);
+                opacity: 1
+            }
+            25% {
+                transform: translateY(-5%);
+                opacity: 1
+            }
+            50% {
+                transform: translateY(0);
+                opacity: 1
+            }
+            75% {
+                transform: translateY(5%);
+                opacity: 1
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+        
+        .ani3 .img7c {
+            animation: img7c 1s infinite linear;
+        }
+        
+        @-webkit-keyframes img7c {
+            0% {
+                transform: translateY(0);
+                opacity: 1
+            }
+            25% {
+                transform: translateY(-5%);
+                opacity: 1
+            }
+            50% {
+                transform: translateY(0);
+                opacity: 1
+            }
+            75% {
+                transform: translateY(5%);
+                opacity: 1
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+        
+        .ani3 .img8c {
+            animation: img8c 1s infinite linear;
+        }
+        
+        @-webkit-keyframes img8c {
+            0% {
+                transform: translateY(0);
+                opacity: 1
+            }
+            25% {
+                transform: translateY(-5%);
+                opacity: 1
+            }
+            50% {
+                transform: translateY(0);
+                opacity: 1
+            }
+            75% {
+                transform: translateY(5%);
+                opacity: 1
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+        
+        .slide4_img2 {
+            width: 24%;
+            position: absolute;
+            left: 50%;
+            margin-left: -12%;
+            top: 15%;
+            transform: scale(0)
+        }
+        
+        .slide4_img3 {
+            width: 50%;
+            position: absolute;
+            left: 50%;
+            margin-left: -25%;
+            top: 32%;
+            transform: translateX(-150%)
+        }
+        
+        .slide4_img4 {
+            width: 60%;
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            margin-left: -30%;
+            transform: translateX(140%)
+        }
+        
+        .slide4_img4 p {
+            text-align: center;
+            padding: 3% 0;
+            color: #fff;
+            background-color: #eb6100;
+            border-radius: 30px;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+        
+        .slide4_img5 {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 73%;
+            text-align: center;
+            transform: translateY(550%)
+        }
+        
+        .slide4_img5 h1 {
+            color: #410808;
+            font-size: 16px;
+        }
+        
+        .slide4_img5 p {
+            font-size: 14px;
+            color: #816a6a;
+            transform: scale(0.8)
+        }
+        
+        .slide4_img6 {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 18%;
+            text-align: center;
+            transform: translateY(310%)
+        }
+        
+        .slide4_img6 h1 {
+            color: #410808;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px
+        }
+        
+        .slide4_img6 .p1 {
+            text-align: center;
+            width: 60%;
+            margin-left: 20%;
+            padding: 3% 0;
+            color: #fff;
+            background-color: #eb6100;
+            border-radius: 30px;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+        
+        .slide4_img6 p {
+            font-size: 15px;
+            color: #410808;
+            transform: scale(0.8);
+            line-height: 1
+        }
+        
+        .slide4_img7 {
+            width: 36%;
+            position: absolute;
+            top: 54%;
+            left: 50%;
+            margin-left: -18%;
+            transform: translateY(310%)
+        }
+        
+        .slide4_img a {
+            display: block;
+        }
+        
+        .slide4_img6 .getimg {
+            width: 60%;
+            padding-left: 21%;
+        }
+        
+        .slide4_img6 .adimg {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            /*margin-bottom: 0px;*/
+            margin-top: 22%;
+        }
+        
+        .ani4 .img2 {
+            animation: cimg2 0.6s 1s forwards ease-out;
+        }
+        
+        @-webkit-keyframes cimg2 {
+            0% {
+                transform: scale(0)
+            }
+            30% {
+                transform: scale(1)
+            }
+            60% {
+                transform: scale(0.7)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+        
+        .ani4 .img3 {
+            animation: cimg3 0.6s 1.7s forwards linear;
+        }
+        
+        @-webkit-keyframes cimg3 {
+            0% {
+                transform: translateX(-150%)
+            }
+            100% {
+                transform: translateX(0)
+            }
+        }
+        
+        .ani4 .img4 {
+            animation: cimg4 0.6s 1.7s forwards linear;
+        }
+        
+        @-webkit-keyframes cimg4 {
+            0% {
+                transform: translateX(140%)
+            }
+            100% {
+                transform: translateX(0)
+            }
+        }
+        
+        .ani4 .img5 {
+            animation: cimg5 0.6s 2.4s forwards linear;
+        }
+        
+        @-webkit-keyframes cimg5 {
+            0% {
+                transform: translateY(550%)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+        
+        .ani4 .img6 {
+            animation: cimg6 0.6s 1.1s forwards linear;
+        }
+        
+        @-webkit-keyframes cimg6 {
+            0% {
+                transform: translateY(305%)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+        
+        .ani4 .img7 {
+            animation: cimg7 0.6s 3.2s forwards linear;
+        }
+        
+        @-webkit-keyframes cimg7 {
+            0% {
+                transform: translateY(550%)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+        
+        .slide5_img1 {
+            width: 34%;
+            margin-left: 8%;
+            margin-top: 6%;
+        }
+        
+        .slide5_img2 {
+            width: 80%;
+            margin: 2% auto 0
+        }
+        
+        .inpGroup {
+            width: 100%;
+            margin: 4% auto 0;
+            font-size: 14px;
+            color: #0c1867;
+            text-align: center;
+        }
+        
+        .inpGroup input {
+            display: inline-block;
+            vertical-align: bottom;
+            border-style: none;
+            border-bottom: 2px solid #0c1867;
+            color: #0c1867;
+            font-family: "microsoft yahei";
+            width: 20%;
+            text-align: center;
+            font-size: 14px;
+            -webkit-appearance: none;
+            border-radius: 0;
+            height: 2.5rem;
+            box-sizing: border-box;
+        }
+        
+        .inpGroup input.inp1 {
+            width: 40%;
+            border: 1px solid #0c1867;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+        
+        .inpGroup input.inp2 {
+            width: 40%;
+            border: 1px solid #0c1867;
+            border-radius: 4px;
+            margin-left: 4rem;
+            margin-top: -5px;
+            vertical-align: middle;
+        }
+        
+        .are {
+            width: 64%;
+            margin: 4% auto 0;
+        }
+        
+        .are p {
+            text-align: center;
+            font-size: 20px;
+            color: #bbbbbb;
+        }
+        
+        .are textarea {
+            width: 100%;
+            display: block;
+            margin: 2% auto 0;
+            resize: none;
+            border-radius: 10px;
+            border: 1px solid #0c1867;
+            padding: 2%;
+            text-indent: 2em;
+            font-size: 16px;
+            font-family: "microsoft yahei";
+            color: #0c1867;
+        }
+        
+        #form1 {
+            text-align: center;
+            margin: 4% auto 0;
+            width: 70%;
+        }
+        
+        .control-group {
+            margin-top: 4%;
+        }
+        
+        .control-group label {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 14px;
+            color: #0c1867
+        }
+        
+        .controls {
+            display: inline-block;
+            vertical-align: middle;
+            width: 80%;
+            margin-left: 4%;
+        }
+        
+        .input-xxlarge {
+            border-style: none;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 4px;
+            border: 1px solid #0c1867;
+            height: 2.5rem;
+            text-align: center;
+            width: 100%;
+            color: #0c1867;
+            font-size: 16px;
+            font-family: "microsoft yahei"
+        }
+        
+        #submitBtn {
+            width: 80%;
+            display: block;
+            margin: 4% auto 0;
+            background: none;
+            border-style: none;
+        }
+        
+        .slide5_img3 {
+            position: absolute;
+            right: 4%;
+            bottom: 4%;
+            width: 6%;
+        }
+        
+        #canvas {
+            position: absolute;
+            left: 0;
+            top: 0
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        #hb {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            /*display: none;*/
+        }
+        
+        .imgA {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 20%;
+            transform: translateY(-100%);
+        }
+        
+        .imgA p {
+            font-size: 22px;
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            width: 100%;
+            margin-top: 10%;
+            z-index: 10
+        }
+        
+        .imgA h1 {
+            font-size: 28px;
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            width: 100%;
+            margin-top: 18%;
+            z-index: 10
+        }
+        
+        .imgA div {
+            background-color: rgba(0, 0, 0, .6);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #hb .aniA {
+            animation: go 0.4s 0.4s forwards linear;
+        }
+        
+        @-webkit-keyframes go {
+            0% {
+                transform: translateY(-100%)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+        
+        .slide1_img5 {
+            width: 70%;
+            position: absolute;
+            left: 4%;
+            top: 20%;
+            z-index: 100;
+            transform: scale(0)
+        }
+        
+        .ani1 .img5 {
+            animation: img5 0.6s 1.1s forwards;
+        }
+        
+        @-webkit-keyframes img5 {
+            0% {
+                transform: scale(0)
+            }
+            30% {
+                transform: scale(1)
+            }
+            60% {
+                transform: scale(0.7)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+        
+        .ani1 .img5a {
+            animation: img5a 1s infinite linear;
+        }
+        
+        @-webkit-keyframes img5a {
+            0% {
+                transform: translateY(0)
+            }
+            25% {
+                transform: translateY(-8%)
+            }
+            50% {
+                transform: translateY(0)
+            }
+            75% {
+                transform: translateY(8%)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+        
+        .ani3 .img5a {
+            animation: img5a 1s infinite linear;
+        }
+        
+        @-webkit-keyframes img5a {
+            0% {
+                transform: translateY(0)
+            }
+            25% {
+                transform: translateY(-8%)
+            }
+            50% {
+                transform: translateY(0)
+            }
+            75% {
+                transform: translateY(8%)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+        
+        .slide2_img8 {
+            position: absolute;
+            left: 8%;
+            width: 40%;
+            top: 50%;
+            transform: translateX(-120%);
+        }
+        
+        .ani2 .img8 {
+            animation: img8 0.6s 3s forwards linear
+        }
+        
+        @-webkit-keyframes img8 {
+            0% {
+                transform: translateX(-120%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        
+        .ani2 .img2a {
+            animation: img2a 1.5s infinite linear;
+        }
+        
+        @-webkit-keyframes img2a {
+            0% {
+                transform: translateX(0);
+                opacity: 1
+            }
+            25% {
+                transform: translateX(-4%);
+                opacity: 1
+            }
+            50% {
+                transform: translateX(0%);
+                opacity: 1
+            }
+            75% {
+                transform: translateX(4%);
+                opacity: 1
+            }
+            100% {
+                transform: translateX(0%);
+                opacity: 1
+            }
+        }
+        
+        .ani3 .img3b {
+            animation: img3b 1.5s infinite linear;
+        }
+        
+        @-webkit-keyframes img3b {
+            0% {
+                transform: translateX(0);
+                opacity: 1
+            }
+            25% {
+                transform: translateX(-8%);
+                opacity: 1
+            }
+            50% {
+                transform: translateX(0%);
+                opacity: 1
+            }
+            75% {
+                transform: translateX(8%);
+                opacity: 1
+            }
+            100% {
+                transform: translateX(0%);
+                opacity: 1
+            }
+        }
+        
+        #hb>p {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            left: 0;
+            font-size: 14px;
+            color: #707672;
+            text-align: center
+        }
+        
+        .icon {
+            position: absolute;
+            width: 8%;
+            left: 50%;
+            margin-left: -4%;
+            bottom: 2%;
+            animation: con 1s infinite ease-out;
+            opacity: 0
+        }
+        
+        @-webkit-keyframes con {
+            0% {
+                transform: translateY(0%);
+                opacity: 0;
+            }
+            25% {
+                transform: translateY(10%);
+                opacity: 0.25
+            }
+            50% {
+                transform: translateY(0%);
+                opacity: 0.5
+            }
+            75% {
+                transform: translateY(-10%);
+                opacity: 0.75
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+        
+        .aui_outer {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <div class="music actM">
+        <img src="http://mat1.gtimg.com/house_guangzhou/0731sd/7.png">
+    </div>
+    <div id="loading" style="text-align:center;background-color:white;position:absolute;z-index: 9999999999">
+        <div style="margin-top: 50%">
+            <img id="loadingImg" style="width: 90px;margin:0 auto;display:block;" src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/54.gif">
+            <p style="color: green">正在全力成长中...</p>
+        </div>
+    </div>
+    <div id="hb">
+        <!--<div class="imgA">
+            <p>长按屏幕保存海报</p>
+            <h1>转发给你的小伙伴吧</h1>
+            <div></div>
+        </div>-->
+        <p>长按屏幕保存海报转发给你的小伙伴吧</p>
+    </div>
+    <canvas id="canvas"></canvas>
+    <!--<img src="http://ox6f2kn0e.bkt.clouddn.com/hb6.jpg" class="hide" crossorigin="anonymous">-->
+    <img src="http://tz.tangxinmao.com/gi/hb6.jpg" class="hide" crossorigin="anonymous">
+    <div class="swiper-container container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1 ani1">
+                <div class="slide1_img1 img1">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/logo.png">
+                </div>
+                <div class="slide1_img2 img2">
+                    <img src="http://tz.tangxinmao.com/gi/04.png">
+                </div>
+                <div class="slide1_img5 img5">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/14.png">
+                </div>
+
+                <div class="slide1_img3 img3">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/01.png" class="a1">
+                    <div class="p3">
+                    </div>
+                </div>
+                <div class="slide1_img4 img4">
+                    <img src="http://tz.tangxinmao.com/gi/03.png">
+                </div>
+                <div class="icon">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/icon1.png">
+                </div>
+            </div>
+            <div class="swiper-slide slide2">
+                <div class="slide1_img1 img1">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/logo.png">
+                </div>
+                <div class="slide2_img2 img2">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/txt1.png">
+                </div>
+                <div class="slide2_img3 img3">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/03.gif">
+                </div>
+                <div class="slide2_img8 img8">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/02.gif">
+                </div>
+                <div class="slide2_img4 img4">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/txt2.png">
+                </div>
+                <div class="slide2_img5 img5">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/txt3.png">
+                </div>
+                <div class="slide2_img6 img6">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/02.png">
+                </div>
+                <div class="slide2_img7">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/05.png">
+                </div>
+                <div class="icon">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/icon1.png">
+                </div>
+            </div>
+            <div class="swiper-slide slide3">
+                <div class="slide1_img1 img1">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/logo.png">
+                </div>
+                <div class="slide3_img2 img2">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/txt4.png">
+                </div>
+                <div class="slide3_img3 img3">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/01.gif">
+                </div>
+                <div class="slide3_img4 img4">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/06.png">
+                </div>
+                <div class="slide3_img5 img5">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/07.png">
+                </div>
+                <div class="slide3_img6 img6">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/08.png">
+                </div>
+                <div class="slide3_img7 img7">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/13.png">
+                </div>
+                <div class="slide3_img8 img8">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/09.png">
+                </div>
+                <div class="slide3_img9 img9">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/txt5.png">
+                </div>
+                <div class="icon">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/icon1.png">
+                </div>
+            </div>
+            <div class="swiper-slide slide4">
+                <div class="slide1_img1 img1">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/logo.png">
+                </div>
+                <div class="slide4_img2 img2">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/11.png">
+                </div>
+                <div class="slide4_img3 img3">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/txt6.png">
+                </div>
+                <div class="slide4_img4 img4">
+                    <p>笔试直通车PASS卡</p>
+                    <p>宣讲会VIP席位</p>
+                    <p>保利和伙人成人礼</p>
+                </div>
+                <div class="slide4_img5 img5">
+                    <h1>温馨TIP</h1>
+                    <p>贴合保利文化，获奖机会更大！</p>
+                    <p>奖品有限，先到先得。</p>
+                </div>
+                <div class="icon">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/icon1.png">
+                </div>
+            </div>
+            <div class="swiper-slide slide5 swiper-no-swiping">
+                <div class="slide1_img1 img1">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/logo.png">
+                </div>
+                <div class="slide4_img6 img6">
+                    <h1><img class="getimg" src="http://tz.tangxinmao.com/gi/5-2.png"></h1>
+                    <p class="p1">10月11日 19:00-22:00</p>
+                    <p>华南理工大学五山校区励吾科技大楼<br>国际会议中心</p>
+                    <p class="p1">10月12日 14:00-17:00</p>
+                    <p>中山大学东校区行政楼B102</p>
+                    <div class="slide4_img7 img6">
+                        <a href="javascript:void(0);">
+                            <img id="shareImg" src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/btn2.png">
+                        </a>
+                    </div>
+                    <div class="adimg">
+                        <img src="http://tz.tangxinmao.com/gi/5-1.png">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slide6 swiper-no-swiping">
+                <div class="slide5_img1">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/logo.png">
+                </div>
+                <div class="slide5_img2">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/txt7.png">
+                </div>
+                <div class="slide5_img3">
+                    <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/05.png">
+                </div>
+                <div class="inpGroup">
+                    <label style="align-self: center">我来自&nbsp;</label>
+                    <input type="text" class="inp1 "><span>&nbsp;大学</span><br/><br/>
+                    <input type="text" class="inp2 "><span>&nbsp;年级</span>
+                </div>
+                <div class="are">
+                    <p>关于成长，我想说：</p>
+                    <textarea name="" id="" cols="30" rows="3"></textarea>
+                </div>
+
+                <iframe id="id_iframe" name="id_iframe" style="display:none;"></iframe>
+                <form name="form1" id="form1" method="post" action="http://huiyan.qq.com/userApply/apply" target="id_iframe" class="huiyan-form" accept-charset="UTF-8">
+                    <input type="hidden" name="activity_id" value="22788">
+                    <input type="hidden" name="attr_list" value="3056,133">
+                    <input type="hidden" name="site" value="houseguangzhou">
+                    <div class="control-group">
+                        <label class="control-label">姓名</label>
+                        <div class="controls">
+                            <input type="text" class="input-xxlarge name" name="form_3056_1" myRequired="0" myHidden="0" placeholder="请输入姓名">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">手机</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入手机号" class="input-xxlarge phoneNum tel" name="form_133_1" identifyName="form_133_2" myRequired="0">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label"></label>
+                        <div class="controls">
+                            <button class="btn" id="submitBtn">
+                                <img src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/btn1.png">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <audio preload="autoplay" id="car_audio" src="http://mat1.gtimg.com/house_guangzhou/house/1001bl/01.mp3" loop></audio>
+
+    <script type="text/javascript" src="http://mat1.gtimg.com/tech/css/huiyan/jquery.min.js"></script>
+    <script type="text/javascript" src="http://gz.game.leju.com/201604/tyhjhy/js/swiper3.06.min.js"></script>
+    <script src="http://gz.house.qq.com/fc/615jhc/loadjs.min.js"></script>
+    <scirpt src="hidpi-canvas.js"></scirpt>
+    <script>
+        load();
+
+        function load() {
+            audioAutoPlay('car_audio');;
+        }
+
+        function loading() {
+            $('#loading').innerHeight($(window).height())
+            $('#loading').innerWidth($(window).width())
+            $('#loadingImg').height = '1000px'
+        }
+
+        var flag = false
+            // 解决ios音乐不自动播放的兼容问题
+        function audioAutoPlay(id) {
+            var audio = document.getElementById(id);
+            audio.play();
+
+            // 点击播放或者暂停
+            $(".music").on("click", function() {
+                if (!flag) {
+                    audio.pause();
+                    $(this).removeClass("actM");
+                    flag = true;
+                } else {
+                    audio.play();
+                    $(this).addClass("actM");
+                    flag = false;
+                }
+            })
+
+            document.addEventListener("WeixinJSBridgeReady", function() {
+                audio.play();
+            }, false);
+            document.addEventListener('YixinJSBridgeReady', function() {
+                audio.play();
+            }, false);
+        }
+
+        $(function() {
+            loading();
+            var img = $("img");
+            var imgArr = [];
+            img.each(function(i, k) {
+                    imgArr.push($(k).attr("src"));
+                })
+                //$("body").Loadjs(imgArr);
+            console.log($('#loading').remove())
+        })
+
+        // drawImg("2017", "计算机", "蓝翔挖掘机", "哇哈哈");
+
+        function drawImg(text1, text2, text3, name) {
+            var imgSrc = $(".hide").attr("src");
+            var canvas = document.getElementById("canvas");
+            canvas.width = $(window).width();
+            canvas.height = $(window).height();
+            var ctx = canvas.getContext("2d");
+
+            var devicePixelRatio = window.devicePixelRatio || 1,
+                backingStoreRatio = ctx.webkitBackingStorePixelRatio || ctx.mozBackingStorePixelRatio || ctx.msBackingStorePixelRatio || ctx.oBackingStorePixelRatio || ctx.backingStorePixelRatio || 1,
+                ratio = devicePixelRatio / backingStoreRatio;
+            var oldWidth = canvas.width;
+            var oldHeight = canvas.height;
+            canvas.width = oldWidth * ratio;
+            canvas.height = oldHeight * ratio;
+            canvas.style.width = oldWidth + 'px';
+            canvas.style.height = oldHeight + 'px';
+
+            console.log('oldWidth' + oldWidth)
+            console.log('oldHeight' + oldHeight)
+
+            var line_height = 20;
+            var img = new Image();
+            img.setAttribute('crossOrigin', 'anonymous');
+            img.src = imgSrc;
+            var text1 = "我是" + text1 + "大学";
+            var text2 = text2 + "级的" + name;
+            var text3 = text3;
+
+            function drawText(t, x, y, w) {
+                var chr = t.split("");
+                var temp = "";
+                var row = [];
+
+                for (var a = 0; a < chr.length; a++) {
+                    if (ctx.measureText(temp).width >= w) {
+                        row.push(temp);
+                        temp = "";
+                    }
+                    temp += chr[a];
+                }
+                row.push(temp);
+                for (var b = 0; b < row.length; b++) {
+                    ctx.fillText(row[b], x, y + (b + 1) * 20);
+                }
+            }
+
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                ctx.scale(ratio, ratio);
+
+                ctx.save();
+                ctx.font = "14px microsoft yahei";
+                ctx.fillStyle = "#0c1867";
+                ctx.textBaseline = "middle";
+                var disY = window.innerHeight / 3 - 20;
+                drawText(text1, 60, disY, 170);
+                ctx.restore();
+
+                ctx.save();
+                ctx.font = "14px microsoft yahei";
+                ctx.fillStyle = "#0c1867";
+                ctx.textBaseline = "middle";
+                var disY = window.innerHeight / 3;
+                drawText(text2, 60, disY, 170);
+                ctx.restore();
+
+                ctx.save();
+                ctx.font = "bold 14px microsoft yahei";
+                ctx.fillStyle = "#df6313";
+                ctx.textBaseline = "middle";
+                var disY = window.innerHeight / 2 - 60;
+                drawText(text3, 60, disY, 170);
+                ctx.restore();
+
+                var a = canvas.toDataURL();
+                var pic = new Image();
+                var hb = document.getElementById("hb");
+                pic.setAttribute('crossOrigin', 'anonymous');
+                pic.src = a;
+                pic.onload = function() {
+                        hb.appendChild(pic);
+                        $("#canvas").hide();
+                        // $(".imgA").addClass("aniA");
+                    }
+                    // console.log(a)
+            }
+        }
+    </script>
+    <script>
+        (function($) {
+            $.getScript("http://mat1.gtimg.com/tech/css/huiyan/huiyan_base_v1.4.min.js?r=" + Math.random(), function() {
+                $(document).ready(function() {
+                    $.createToolkit.generatePhoneIdentify();
+                });
+                $("#submitBtn").click(function(event) {
+                    event.preventDefault();
+                    var v1 = $(".inpGroup .inp1").val();
+                    var v2 = $(".inpGroup .inp2").val();
+                    var v3 = $(".are textarea").val();
+                    var v4 = $(".name").val();
+                    var v5 = $(".tel").val();
+
+                    if ($.createToolkit.commonCheck()) {
+
+                        $.createToolkit.escapeHtml();
+                        var originCode = document.charset;
+                        if (document.all)
+                            document.charset = 'utf-8';
+                        if (v1 == "") {
+                            alert("请输入您的班级")
+                        } else if (v1 != "" && v2 == "") {
+                            alert("请输入您的专业")
+                        } else if (v1 != "" && v2 != "" && v3 == "") {
+                            alert("请输入关于成长的话题");
+                        } else if (v1 != "" && v2 == "" && v3 != "") {
+                            alert("请输入您的专业")
+                        } else if (v1 != "" && v2 != "" && v3 != "" && v4 == "") {
+                            alert("请输入您的名字")
+                        } else if (v1 != "" && v2 != "" && v3 != "" && v4 != "" && v5 == "") {
+                            alert("请输入您的电话号码")
+                        } else if (v1 != "" && v2 != "" && v3 != "" && v4 != "" && v5 != "") {
+                            $(".container").hide();
+                            $("#hb").show();
+                            drawImg(v1, v2, v3, v4);
+                            $("#form1").submit();
+                        }
+                        document.charset = originCode;
+                        $.createToolkit.unescapeHtml();
+                    }
+
+                });
+            });
+        })(jQuery);
+
+        //报名成功的回调函数，如有需要可以覆盖修改函数体，保留函数名不变。
+        //注：该函数仅支持慧眼系统同子域名（qq.com）内的回调，跨域回调操作不会被触发。
+        function huiyan_success_callback() {
+            huiyanAlert("报名成功", function() {});
+        }
+
+        function huiyan_fail_callback(errorMsg) {
+            huiyanAlert(errorMsg);
+        }
+    </script>
+    <script>
+        $(function() {
+            var img5 = $(".slide1_img5").get(0);
+            var slide2_img2 = $(".slide2_img2").get(0);
+            var slide3_img9 = $(".slide3_img9").get(0);
+            var slide3_img4 = $(".slide3_img4").get(0);
+            var slide3_img5 = $(".slide3_img5").get(0);
+            var slide3_img6 = $(".slide3_img6").get(0);
+            var slide3_img7 = $(".slide3_img7").get(0);
+            var slide3_img8 = $(".slide3_img8").get(0);
+
+            img5.addEventListener("webkitAnimationEnd", function() {
+                $(".slide1_img5").addClass("img5a");
+            })
+            slide2_img2.addEventListener("webkitAnimationEnd", function() {
+                $(".slide2_img2").addClass("img2a");
+            })
+            slide3_img9.addEventListener("webkitAnimationEnd", function() {
+                $(".slide3_img9").addClass("img5a");
+            })
+            slide3_img4.addEventListener("webkitAnimationEnd", function() {
+                $(".slide3_img4").addClass("img4c");
+            })
+            slide3_img5.addEventListener("webkitAnimationEnd", function() {
+                $(".slide3_img5").addClass("img5c");
+            })
+            slide3_img6.addEventListener("webkitAnimationEnd", function() {
+                $(".slide3_img6").addClass("img6c");
+            })
+            slide3_img7.addEventListener("webkitAnimationEnd", function() {
+                $(".slide3_img7").addClass("img7c");
+            })
+            slide3_img8.addEventListener("webkitAnimationEnd", function() {
+                $(".slide3_img8").addClass("img8c");
+            })
+
+            var swiper = new Swiper(".container", {
+                direction: 'vertical',
+                noSwiping: true,
+                onTransitionEnd: function(swiper) {
+                    var _index = swiper.activeIndex;
+                    switch (_index) {
+                        case 0:
+                            $(".slide1").addClass("ani1");
+                            $(".slide2").removeClass("ani2");
+                            break;
+                        case 1:
+                            $(".slide1").removeClass("ani1");
+                            $(".slide2").addClass("ani2");
+                            $(".slide3").removeClass("ani3");
+                            break;
+                        case 2:
+                            $(".slide2").removeClass("ani2");
+                            $(".slide3").addClass("ani3");
+                            $(".slide4").removeClass("ani4");
+                            break;
+                        case 3:
+                            $(".slide3").removeClass("ani3");
+                            $(".slide4").addClass("ani4");
+                            $(".slide5").removeClass("ani4");
+                            break;
+                        case 4:
+                            $(".slide4").removeClass("ani4");
+                            $(".slide5").addClass("ani4");
+                            //$("#shareImg").css("margin-top","-135%");
+                            break;
+                    }
+                }
+            })
+
+            $(".slide4_img7").on("click", function() {
+                swiper.slideNext();
+            })
+        })
+
+        var shareTitle = '成长是一场无穷大的赛跑';
+
+        var descContent = '保利和伙人成长每一轮';
+
+        var shareTimeLineTitle = '成长是一场无穷大的赛跑';
+        //小图(100x100)
+        var imgUrl = 'http://mat1.gtimg.com/house_guangzhou/house/1001bl/04.png' /*tpa=http://mat1.gtimg.com/gd/2015/invitation/sharelogo.jpg*/ ;
+        //var imgUrl = 'http://tz.tangxinmao.com/gi/04.png';
+
+        var lineLink = location.href;
+        var appid = '';
+
+        function shareFriend() {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                "appid": appid,
+                "img_url": imgUrl,
+                "img_width": "120",
+                "img_height": "120",
+                "link": lineLink,
+                "desc": descContent,
+                "title": shareTitle
+            }, function(res) {
+                _report('send_msg', res.err_msg);
+            })
+        }
+
+        function shareTimeline() {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url": imgUrl,
+                "img_width": "120",
+                "img_height": "120",
+                "link": lineLink,
+                "desc": descContent,
+                "title": shareTimeLineTitle
+            }, function(res) {
+                _report('timeline', res.err_msg);
+            });
+        }
+
+        function shareWeibo() {
+            WeixinJSBridge.invoke('shareWeibo', {
+                "content": descContent,
+                "url": lineLink,
+            }, function(res) {
+                _report('weibo', res.err_msg);
+            });
+        }
+
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+                shareFriend();
+            });
+
+            WeixinJSBridge.on('menu:share:timeline', function(argv) {
+                shareTimeline();
+            });
+
+            WeixinJSBridge.on('menu:share:weibo', function(argv) {
+                shareWeibo();
+            });
+        }, false);
+    </script>
+</body>
+
+</html>
+<!--[if !IE]>|xGv00|1a11d17eb385558f4b7097cbe3df3366<![endif]-->
